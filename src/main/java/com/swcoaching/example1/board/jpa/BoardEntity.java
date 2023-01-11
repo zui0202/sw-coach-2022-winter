@@ -9,10 +9,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@NoArgsConstructor
 @Table(name = "board")
 @Entity
 public class BoardEntity {
@@ -38,4 +41,9 @@ public class BoardEntity {
   @OneToMany(mappedBy = "board")
   public List<PostEntity> posts = new ArrayList<>();
 
+  public BoardEntity(String title, String remark, long id) {
+    this.title = title;
+    this.remark = remark;
+    this.id = id;
+  }
 }
