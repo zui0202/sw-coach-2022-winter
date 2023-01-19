@@ -36,5 +36,5 @@ jobs:
           > Git Commit 메세지: `${{ github.event.head_commit.message }}`
         SLACK_USERNAME: 배포 결과 알려 드림
         SLACK_COLOR: ${{ job.status }}
-        SLACK_FOOTER: '이건 테스트 배포 입니다.'
+        SLACK_FOOTER: '이건 테스트 배포입니다.'
       if: always()
